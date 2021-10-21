@@ -21,11 +21,11 @@ if (b == true) {
   tot = tot * 10;
  }
  
- if(tot <= 4000) {
+ if (tot <= 4000) {
   tot = tot * 4;
  }
  
- if(getNumDigits(tot) % 2 == 1) {
+ if (getNumDigits(tot) % 2 == 1) {
   tot = tot / 10;
   c = tot;
  }
@@ -39,60 +39,54 @@ if (b == true) {
  if (first <= 65) {
   first = first + 61;
  }
-if(end <=65)
-{
- end = end + 61;
-}
-one = getSecretCode (first);
-two = getSecretCode (end);
+ if (end <=65) {
+  end = end + 61;
+ }
  
-System.out.println("Sum of ascii codes = " + a);
-System.out.println("4 Digit Number: " + c);
-System.out.println("Secret Code: " + one + two);
-}
-if(b == false)
-{
- System.out.println("Invalid ");
-}
+ one = getSecretCode (first);
+ two = getSecretCode (end);
+ 
+ System.out.println("Sum of ascii codes = " + a);
+ System.out.println("4 Digit Number: " + c);
+ System.out.println("Secret Code: " + one + two);
 }
  
-public static boolean isValidLength (String s)
-{
-boolean valid = false;
-if(s.length() >= 2 && s.length() <= 12) 
-{
-valid = true;
-}
-return valid;
+ if (b == false) {
+  System.out.println("Invalid ");
+ }
 }
  
+public static boolean isValidLength (String s) {
+ boolean valid = false;
  
-public static int CharToAscii (String s) 
-{
-int total = 0;
-for (int e = 0; e <= s.length() - 1; e++)
-{
-int value = s.charAt(e);
-total = total + value;
-}
-return total;
+ if(s.length() >= 2 && s.length() <= 12) {
+  valid = true;
+ }
+ return valid;
 }
  
  
-public static int getNumDigits (int n)
-{
-int dig = 0;
-while (n > 0)
-{
-n = n / 10;
-dig++;
-}
-return dig;
+public static int CharToAscii (String s) {
+ int total = 0;
+ for (int e = 0; e <= s.length() - 1; e++) {
+  int value = s.charAt(e);
+  total = total + value;
+ }
+ return total;
 }
  
-public static String getSecretCode (int num)
-{
-String ssss = Character.toString((char) num);
-return ssss;
+ 
+public static int getNumDigits (int n) {
+ int dig = 0;
+ while (n > 0) {
+  n = n / 10;
+  dig++;
+ }
+ return dig;
 }
+ 
+public static String getSecretCode (int num) {
+ String ssss = Character.toString((char) num);
+ return ssss;
+ }
 }
